@@ -135,8 +135,7 @@ export const Header: React.FC = () => {
             <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-ink text-blush flex items-center justify-center shadow-soft group-hover:rotate-12 transition-transform group-hover:anim-wiggle">
               <IconPaw className="w-5.5 h-5.5" />
             </span>
-           // Si el logo tiene un span con el texto, añade esta clase para ocultarlo en móviles muy pequeños
-<span className="hidden xs:inline-block leading-none">
+           <span className="hidden xs:inline-block leading-none">
   <span className="block font-display text-sm sm:text-xl text-ink">Ricaurte <span className="text-blush">Mascotas</span></span>
   <span className="block text-[8px] sm:text-[10px] tracking-[0.18em] uppercase text-body/70 font-semibold">Prendas a mano • Ibagué</span>
 </span>
