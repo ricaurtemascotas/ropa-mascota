@@ -120,65 +120,81 @@ export const Header: React.FC = () => {
       <AnnouncementBar />
       <header className="sticky top-0 z-50 bg-cream/90 backdrop-blur-lg border-b border-pinky/40 shadow-[0_4px_20px_rgba(51,39,42,0.06)]">
         {/* Fila principal */}
-       <div className="max-w-7xl mx-auto px-2 sm:px-6 flex items-center gap-1 sm:gap-6 h-16 sm:h-[72px]">
-  {/* Hamburguesa */}
-  <button onClick={() => setMobileMenuOpen(true)} aria-label="Abrir menú" className="lg:hidden w-10 h-10 rounded-full hover:bg-pinky/60 transition-colors flex items-center justify-center shrink-0">
-    <IconMenu className="w-5 h-5 text-ink" />
-  </button>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center gap-3 sm:gap-6 h-16 sm:h-[72px]">
+          {/* Hamburguesa móvil */}
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Abrir menú"
+            className="lg:hidden w-10 h-10 rounded-full hover:bg-pinky/60 transition-colors flex items-center justify-center"
+          >
+            <IconMenu className="w-5 h-5 text-ink" />
+          </button>
 
-  {/* Logo - Reducimos su tamaño en móvil */}
-  <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-1.5 sm:gap-2.5 group shrink-0">
-    <span className="w-8 h-8 sm:w-11 sm:h-11 rounded-2xl bg-ink text-blush flex items-center justify-center shadow-soft group-hover:rotate-12 transition-transform">
-      <IconPaw className="w-4 sm:w-5.5 h-4 sm:h-5.5" />
-    </span>
-    <span className="leading-none hidden xs:block"> {/* Ocultamos el texto en móviles muy pequeños */}
-      <span className="block font-display text-sm sm:text-xl text-ink">Ricaurte <span className="text-blush">Mascotas</span></span>
-      <span className="block text-[8px] sm:text-[10px] tracking-[0.18em] uppercase text-body/70 font-semibold">Prendas a mano • Ibagué</span>
-    </span>
-  </Link>
+          {/* Logo */}
+          <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5 group shrink-0" aria-label="Ricaurte Mascotas — Inicio">
+            <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-ink text-blush flex items-center justify-center shadow-soft group-hover:rotate-12 transition-transform group-hover:anim-wiggle">
+              <IconPaw className="w-5.5 h-5.5" />
+            </span>
+            <span className="leading-none">
+              <span className="block font-display text-lg sm:text-xl text-ink">Ricaurte <span className="text-blush">Mascotas</span></span>
+              <span className="block text-[9px] sm:text-[10px] tracking-[0.18em] uppercase text-body/70 font-semibold">Prendas a mano • Ibagué</span>
+            </span>
+          </Link>
 
-  {/* Buscador - Oculto en móvil, pero lo dejamos para desktop */}
-  <div className="hidden md:block flex-1 flex justify-center">
-    <SearchBox />
-  </div>
+          {/* Buscador desktop */}
+          <div className="hidden md:block flex-1 flex justify-center">
+            <SearchBox />
+          </div>
 
-  {/* Accesos rápidos - Ajustamos el tamaño y espaciado */}
-  <div className="ml-auto flex items-center gap-0 sm:gap-2">
-    {/* Botón de búsqueda para móvil */}
-    <button onClick={() => setSearchOpen(true)} aria-label="Buscar" className="md:hidden w-9 h-9 rounded-full hover:bg-pinky/60 transition-colors flex items-center justify-center shrink-0">
-      <IconSearch className="w-4 h-4 text-ink" />
-    </button>
-    
-    <button onClick={() => (user ? navigate('/cuenta') : setLoginOpen(true))} aria-label={user ? 'Mi cuenta' : 'Iniciar sesión'} className="hidden sm:flex w-9 h-9 rounded-full hover:bg-pinky/60 transition-colors items-center justify-center relative shrink-0">
-      {user ? (
-        <span className="w-7 h-7 rounded-full bg-blush text-ink font-extrabold text-xs flex items-center justify-center shadow-blush">
-          {user.name.charAt(0).toUpperCase()}
-        </span>
-      ) : (
-        <IconUser className="w-4 h-4 text-ink" />
-      )}
-    </button>
-    
-    <Link to="/deseos" aria-label={`Lista de deseos (${wishlist.length})`} className="relative w-9 h-9 rounded-full hover:bg-pinky/60 transition-colors flex items-center justify-center shrink-0">
-      <IconHeart className="w-4 h-4 text-ink" />
-      {wishlist.length > 0 && (
-        <span className="absolute -top-0.5 -right-0.5 bg-blush text-ink text-[9px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center shadow anim-pop">
-          {wishlist.length}
-        </span>
-      )}
-    </Link>
-    
-    {/* Botón del carrito - Ajustamos su tamaño */}
-    <button onClick={() => setCartOpen(true)} aria-label={`Abrir carrito (${cartCount} productos)`} className="relative w-9 h-9 rounded-full bg-ink text-paper hover:bg-body transition-colors flex items-center justify-center shadow-soft shrink-0">
-      <IconCart className="w-4 h-4" />
-      {cartCount > 0 && (
-        <span className="absolute -top-1 -right-1 bg-blush text-ink text-[9px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center shadow anim-pop">
-          {cartCount}
-        </span>
-      )}
-    </button>
-  </div>
-</div>
+          {/* Accesos rápidos */}
+          <div className="ml-auto flex items-center gap-1 sm:gap-2">
+            <button
+              onClick={() => setSearchOpen(true)}
+              aria-label="Buscar"
+              className="md:hidden w-10 h-10 rounded-full hover:bg-pinky/60 transition-colors flex items-center justify-center"
+            >
+              <IconSearch className="w-5 h-5 text-ink" />
+            </button>
+            <button
+              onClick={() => (user ? navigate('/cuenta') : setLoginOpen(true))}
+              aria-label={user ? 'Mi cuenta' : 'Iniciar sesión'}
+              className="hidden sm:flex w-10 h-10 rounded-full hover:bg-pinky/60 transition-colors items-center justify-center relative"
+              title={user ? `Hola, ${user.name.split(' ')[0]}` : 'Mi cuenta'}
+            >
+              {user ? (
+                <span className="w-8 h-8 rounded-full bg-blush text-ink font-extrabold text-sm flex items-center justify-center shadow-blush">
+                  {user.name.charAt(0).toUpperCase()}
+                </span>
+              ) : (
+                <IconUser className="w-5 h-5 text-ink" />
+              )}
+            </button>
+            <Link
+              to="/deseos"
+              aria-label={`Lista de deseos (${wishlist.length})`}
+              className="relative w-10 h-10 rounded-full hover:bg-pinky/60 transition-colors flex items-center justify-center"
+            >
+              <IconHeart className="w-5 h-5 text-ink" />
+              {wishlist.length > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 bg-blush text-ink text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow anim-pop">
+                  {wishlist.length}
+                </span>
+              )}
+            </Link>
+            <button
+              onClick={() => setCartOpen(true)}
+              aria-label={`Abrir carrito (${cartCount} productos)`}
+              className="relative w-10 h-10 rounded-full bg-ink text-paper hover:bg-body transition-colors flex items-center justify-center shadow-soft"
+            >
+              <IconCart className="w-5 h-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-blush text-ink text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow anim-pop">
+                  {cartCount}
+                </span>
+              )}
+            </button>
+          </div>
+        </div>
 
         {/* Nav desktop con mega menú */}
         <nav className="hidden lg:block border-t border-pinky/30" aria-label="Navegación principal">
