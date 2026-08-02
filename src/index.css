@@ -153,7 +153,7 @@ h3,
   animation: wiggle 2.4s ease-in-out infinite;
 }
 .anim-marquee {
-  animation: marquee 22s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 
 /* Retrasos escalonados */

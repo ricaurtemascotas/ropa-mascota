@@ -31,8 +31,7 @@ const AnnouncementBar: React.FC = () => {
     >
       <div className="flex w-max anim-marquee">
         {strip.map((m, i) => (
-          <span key={i} className="whitespace-nowrap px-6">
-            {m} <span className="text-blush mx-2">★</span>
+          <span key={i} className="whitespace-nowrap px-6 sm:px-8">{m} <span className="text-blush mx-2">★</span></span>
           </span>
         ))}
       </div>
