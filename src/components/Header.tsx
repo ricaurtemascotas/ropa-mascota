@@ -18,11 +18,11 @@ import {
 // ─── Barra de anuncios ────────────────────────────────────────────────────
 const AnnouncementBar: React.FC = () => {
   const msgs = [
-    "🚚 Envío GRATIS en compras superiores a $100.000 COP en Ibagué",
-    "🐾 Avalado por la garantía de Ricaurte Mascotas",
-    "🧶 Prendas 100% hechas a mano en Ibagué, Colombia",
-    "🎁 Suscríbete y recibe 10% OFF en tu primera compra",
-  ];
+  { text: '🚚 Envío GRATIS en compras superiores a $100.000 COP en Ibagué', short: '🚚 Envío GRATIS en compras +$100k en Ibagué' },
+  { text: '🐾 Avalado por la garantía de Ricaurte Mascotas', short: '🐾 Avalado por Ricaurte Mascotas' },
+  { text: '🧶 Prendas 100% hechas a mano en Ibagué, Colombia', short: '🧶 Prendas hechas a mano en Ibagué' },
+  { text: '🎁 Suscríbete y recibe 10% OFF en tu primera compra', short: '🎁 10% OFF en tu primera compra' },
+];
   const strip = [...msgs, ...msgs];
   return (
     <div
@@ -31,9 +31,12 @@ const AnnouncementBar: React.FC = () => {
     >
       <div className="flex w-max anim-marquee">
         {strip.map((m, i) => (
-          <span key={i} className="whitespace-nowrap px-6 sm:px-8">{m} <span className="text-blush mx-2">★</span></span>
-          </span>
-        ))}
+  <span key={i} className="whitespace-nowrap px-6 sm:px-8">
+    <span className="hidden sm:inline">{m.text}</span>
+    <span className="sm:hidden">{m.short}</span>
+    <span className="text-blush mx-2">★</span>
+  </span>
+))}
       </div>
     </div>
   );
