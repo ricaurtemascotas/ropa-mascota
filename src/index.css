@@ -171,3 +171,33 @@ h3,
 .group:hover .zoom-img {
   transform: scale(1.35);
 }
+/* Ajustes específicos para el header en móvil */
+@media (max-width: 640px) {
+  .header-container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  /* Oculta el texto del logo en móviles muy pequeños si no cabe */
+  .logo-text {
+    display: none;
+  }
+
+  /* Asegura que los iconos no se desborden */
+  .header-icon {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .header-icon svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+}
+
+/* Para pantallas muy pequeñas (menos de 400px) */
+@media (max-width: 400px) {
+  .logo-text-desktop {
+    display: none !important;
+  }
+}
