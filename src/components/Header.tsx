@@ -120,7 +120,7 @@ export const Header: React.FC = () => {
       <AnnouncementBar />
       <header className="sticky top-0 z-50 bg-cream/90 backdrop-blur-lg border-b border-pinky/40 shadow-[0_4px_20px_rgba(51,39,42,0.06)]">
         {/* Fila principal */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center gap-3 sm:gap-6 h-16 sm:h-[72px]">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 flex items-center gap-1 sm:gap-6 h-16 sm:h-[72px]">
           {/* Hamburguesa móvil */}
           <button
             onClick={() => setMobileMenuOpen(true)}
@@ -135,10 +135,11 @@ export const Header: React.FC = () => {
             <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-ink text-blush flex items-center justify-center shadow-soft group-hover:rotate-12 transition-transform group-hover:anim-wiggle">
               <IconPaw className="w-5.5 h-5.5" />
             </span>
-            <span className="leading-none">
-              <span className="block font-display text-lg sm:text-xl text-ink">Ricaurte <span className="text-blush">Mascotas</span></span>
-              <span className="block text-[9px] sm:text-[10px] tracking-[0.18em] uppercase text-body/70 font-semibold">Prendas a mano • Ibagué</span>
-            </span>
+           // Si el logo tiene un span con el texto, añade esta clase para ocultarlo en móviles muy pequeños
+<span className="hidden xs:inline-block leading-none">
+  <span className="block font-display text-sm sm:text-xl text-ink">Ricaurte <span className="text-blush">Mascotas</span></span>
+  <span className="block text-[8px] sm:text-[10px] tracking-[0.18em] uppercase text-body/70 font-semibold">Prendas a mano • Ibagué</span>
+</span>
           </Link>
 
           {/* Buscador desktop */}

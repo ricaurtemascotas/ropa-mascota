@@ -7,7 +7,7 @@ export const WhatsAppButton: React.FC = () => (
     target="_blank"
     rel="noreferrer"
     aria-label="Chatea con nosotros por WhatsApp"
-    className="fixed bottom-5 right-5 z-[60] w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-transform"
+    className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-[60] w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-transform"
   >
     <IconWhatsApp className="w-7 h-7" />
     <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping" style={{ animationDuration: '2.5s' }} aria-hidden="true" />
