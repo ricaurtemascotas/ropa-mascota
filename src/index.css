@@ -16,30 +16,7 @@
   --shadow-blush: 0 12px 32px -10px rgba(255, 139, 167, 0.45);
   --shadow-card: 0 4px 20px -6px rgba(51, 39, 42, 0.12);
 }
-/* Solución definitiva para el scroll lateral en móviles */
-* {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  overflow-x: hidden !important;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Asegurar que ningún contenedor se desborde */
-.max-w-7xl,
-.max-w-full,
-.container {
-  max-width: 100% !important;
-}
-html {
-  scroll-behavior: smooth;
-}
-
+ 
 body {
   @apply bg-cream text-body font-sans antialiased;
 }
